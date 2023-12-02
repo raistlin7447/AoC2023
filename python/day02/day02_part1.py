@@ -21,6 +21,5 @@ with open('day02_input.txt') as f:
                 break
         else:
             total += game
-        continue
 
 print(total)
