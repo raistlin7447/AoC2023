@@ -29,7 +29,7 @@ for row, row_data in enumerate(grid):
 
 for row, row_data in enumerate(grid):
     for col, char in enumerate(row_data):
-        if not isinstance(char, Part) and char != ".":
+        if char == "*":
             adjacent_parts = []
             for i, j in adjacent:
                 r_check = row + i
