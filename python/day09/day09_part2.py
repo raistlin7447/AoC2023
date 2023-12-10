@@ -1,0 +1,21 @@
+import itertools
+
+with open('day09_input.txt') as f:
+    lines = f.readlines()
+    total = 0
+    for line in lines:
+        sequence = [[int(i) for i in line.split()[::-1]]]
+        current = sequence[0]
+        next_item_total = 0
+
+        while sum(current) != 0:
+            next_item_total += current[-1]
+            pairs = itertools.pairwise(current)
+            current = []
+            for first, second in pairs:
+                current.append(second - first)
+            sequence.append(current)
+
+        total += next_item_total
+
+    print(total)
